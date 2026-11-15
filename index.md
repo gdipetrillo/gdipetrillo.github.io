@@ -38,6 +38,10 @@ title: Gemma Di Petrillo
     <p>
       Here is my <a href="curricula/cv_gemma_latex.pdf" target="_blank"><strong>full CV</strong></a>.
     </p>
+
+    <p style="margin-top: 50px; font-size: 0.85em; color: #777; font-style: italic;">
+      P.S. This page is currently a work in progress! Hopefully, it will soon be a bit more coherent.
+    </p>
   </div>
 
 </div>
