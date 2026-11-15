@@ -16,41 +16,56 @@
     
     /* 1. LA BARRA COLORATA E TRASLUCIDA */
     .nav-container { 
-      background-color: rgba(226, 237, 248, 0.85); /* Azzurro polvere semitrasparente */
-      backdrop-filter: blur(8px); /* Effetto vetro */
-      border-bottom: 1px solid rgba(200, 215, 230, 0.5); /* Righetta in tinta */
+      background-color: rgba(226, 237, 248, 0.85); 
+      backdrop-filter: blur(8px); 
+      border-bottom: 1px solid rgba(200, 215, 230, 0.5); 
       position: sticky;  
       top: 0;            
       z-index: 1000;
       padding: 15px 40px;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between; /* <--- LA MAGIA: nome a sx, link a dx */
       align-items: center;
     }
+
+    /* IL TUO NOME A SINISTRA (Il "Brand") */
+    .nav-brand a {
+      color: #1a1a1a; /* Antracite elegante */
+      text-decoration: none;
+      font-weight: 600; /* Un po' più marcato per farlo risaltare */
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      transition: color 0.2s;
+    }
+    .nav-brand a:hover {
+      color: #2c5282; /* Diventa blu al passaggio del mouse */
+    }
     
+    /* I LINK A DESTRA */
     .nav-links { display: flex; gap: 30px; }
 
     .nav-links a { 
-      color: #2c5282; /* Blu elegante per i link, che si sposa con lo sfondo azzurrino */
+      color: #2c5282; 
       text-decoration: none;     
       font-weight: 500; 
       font-size: 16px;
       transition: color 0.2s;
     }
     
-    .nav-links a:hover { color: #1a365d; } /* Blu più scuro al passaggio del mouse */
+    .nav-links a:hover { color: #1a365d; } 
 
+    /* LE TRE RIGHINE */
     .hamburger {
       display: none;
       font-size: 24px;
       background: none;
       border: none;
       cursor: pointer;
-      color: #2c5282; /* Hamburger colorato in tinta */
+      color: #2c5282; 
       padding: 0;
     }
 
-    /* 2. LA GRIGLIA DELLA HOME (Gestita qui per essere reattiva) */
+    /* 2. LA GRIGLIA DELLA HOME */
     .home-grid {
       display: grid;
       grid-template-columns: 350px 1fr;
@@ -59,9 +74,12 @@
       text-align: left;
     }
 
-    /* REGOLE PER IL CELLULARE (Schermi sotto i 768px) */
+    /* REGOLE PER IL CELLULARE */
     @media screen and (max-width: 768px) {
-      .nav-container { justify-content: flex-start; padding: 15px 20px; }
+      .nav-container { 
+        padding: 15px 20px; 
+        /* Con space-between il nome resta a sx e le righine vanno a dx. Perfetto! */
+      }
       .hamburger { display: block; }
       
       .nav-links {
@@ -71,17 +89,16 @@
         top: 100%; 
         left: 0;
         width: 100%;
-        background-color: rgba(240, 246, 252, 0.98); /* Tendina quasi opaca ma sempre azzurrina */
+        background-color: rgba(240, 246, 252, 0.98); 
         padding: 0; 
         box-shadow: 0 4px 6px rgba(0,0,0,0.05);
       }
       .nav-links.active { display: flex; }
       .nav-links a { padding: 15px 20px; border-top: 1px solid rgba(200, 215, 230, 0.3); }
 
-      /* LA MAGIA PER LA HOME SU CELLULARE: diventa una colonna sola! */
       .home-grid {
-        grid-template-columns: 1fr; /* 1 frazione (tutto lo spazio disponibile) */
-        gap: 20px; /* Riduce un po' lo spazio tra foto e testo */
+        grid-template-columns: 1fr; 
+        gap: 20px; 
       }
     }
 
@@ -94,13 +111,22 @@
 </head>
 <body>
 
+  <!-- LA BARRA -->
   <div class="nav-container">
+    
+    <!-- IL TUO NOME IN ALTO A SINISTRA -->
+    <div class="nav-brand">
+      <a href="index.html">Gemma Di Petrillo</a>
+    </div>
+
+    <!-- HAMBURGER E LINK A DESTRA -->
     <button class="hamburger" onclick="toggleMenu()">☰</button>
     <div class="nav-links" id="myLinks">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
       <a href="teaching.html">Teaching</a>
     </div>
+
   </div>
 
   <div style="text-align: center; margin-bottom: 50px; padding: 40px 20px;">
