@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- QUESTA RIGA È FONDAMENTALE PER I CELLULARI -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <style>
-    /* 1. REGOLE GENERALI */
+    /* REGOLE GENERALI */
     body { 
       margin: 0; 
       background-color: #fcfcfc; 
@@ -15,89 +14,79 @@
       font-size: 17px; 
     }
     
-    /* 2. LA BARRA DI NAVIGAZIONE CHIARA ED ELEGANTE */
+    /* 1. LA BARRA COLORATA E TRASLUCIDA */
     .nav-container { 
-      background-color: rgba(252, 252, 252, 0.95); /* Chiara e quasi trasparente */
-      border-bottom: 1px solid #eaeaea; /* Riga sottile per separare */
+      background-color: rgba(226, 237, 248, 0.85); /* Azzurro polvere semitrasparente */
+      backdrop-filter: blur(8px); /* Effetto vetro */
+      border-bottom: 1px solid rgba(200, 215, 230, 0.5); /* Righetta in tinta */
       position: sticky;  
       top: 0;            
       z-index: 1000;
       padding: 15px 40px;
       display: flex;
-      justify-content: flex-end; /* Su Desktop i link stanno a destra */
+      justify-content: flex-end;
       align-items: center;
     }
     
-    /* Il contenitore dei link */
-    .nav-links {
-      display: flex;
-      gap: 30px; /* Spazio tra i link */
-    }
+    .nav-links { display: flex; gap: 30px; }
 
     .nav-links a { 
-      color: #555555; 
+      color: #2c5282; /* Blu elegante per i link, che si sposa con lo sfondo azzurrino */
       text-decoration: none;     
-      font-weight: normal; /* Niente grassetto pesante */
+      font-weight: 500; 
       font-size: 16px;
       transition: color 0.2s;
     }
     
-    .nav-links a:hover {
-      color: #2c5282; /* Diventa di un blu polvere elegante quando ci passi sopra */
-    }
+    .nav-links a:hover { color: #1a365d; } /* Blu più scuro al passaggio del mouse */
 
-    /* Le 3 righine (nascoste su desktop) */
     .hamburger {
       display: none;
       font-size: 24px;
       background: none;
       border: none;
       cursor: pointer;
-      color: #333;
+      color: #2c5282; /* Hamburger colorato in tinta */
       padding: 0;
     }
 
-    /* 3. LA MAGIA PER IL CELLULARE (Schermi sotto i 768px) */
-    @media screen and (max-width: 768px) {
-      .nav-container {
-        justify-content: flex-start; /* Sposta le 3 righine a sinistra */
-        padding: 15px 20px;
-      }
-      
-      .hamburger {
-        display: block; /* Fa apparire le 3 righine */
-      }
+    /* 2. LA GRIGLIA DELLA HOME (Gestita qui per essere reattiva) */
+    .home-grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 40px;
+      align-items: start;
+      text-align: left;
+    }
 
+    /* REGOLE PER IL CELLULARE (Schermi sotto i 768px) */
+    @media screen and (max-width: 768px) {
+      .nav-container { justify-content: flex-start; padding: 15px 20px; }
+      .hamburger { display: block; }
+      
       .nav-links {
-        display: none; /* Nasconde i link classici */
-        flex-direction: column; /* Li mette in colonna */
+        display: none; 
+        flex-direction: column; 
         position: absolute;
-        top: 100%; /* Sotto la barra */
+        top: 100%; 
         left: 0;
         width: 100%;
-        background-color: #fcfcfc;
-        border-bottom: 1px solid #eaeaea;
-        padding: 0; /* Tolgo il padding per farlo full-width */
-        box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* Leggera ombreggiatura sotto */
+        background-color: rgba(240, 246, 252, 0.98); /* Tendina quasi opaca ma sempre azzurrina */
+        padding: 0; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
       }
+      .nav-links.active { display: flex; }
+      .nav-links a { padding: 15px 20px; border-top: 1px solid rgba(200, 215, 230, 0.3); }
 
-      .nav-links.active {
-        display: flex; /* Fa apparire il menù quando si clicca */
-      }
-
-      .nav-links a {
-        padding: 15px 20px; /* Spazio cliccabile bello grande per le dita */
-        border-top: 1px solid #f0f0f0;
+      /* LA MAGIA PER LA HOME SU CELLULARE: diventa una colonna sola! */
+      .home-grid {
+        grid-template-columns: 1fr; /* 1 frazione (tutto lo spazio disponibile) */
+        gap: 20px; /* Riduce un po' lo spazio tra foto e testo */
       }
     }
 
-    /* 4. REGOLE DEL TESTO (La gabbia per i tuoi contenuti) */
-    .content { 
-      max-width: 1250px;  
-      margin: 40px auto; 
-      padding: 0 40px;    
-      text-align: left;   
-    }
+    /* REGOLE DEL TESTO */
+    .content { max-width: 1250px; margin: 40px auto; padding: 0 40px; text-align: left; }
     .content h1 { text-align: center; margin-bottom: 40px; }
     .content a { color: #2c5282; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s; }
     .content a:hover { border-bottom: 1px solid #2c5282; }
@@ -105,12 +94,8 @@
 </head>
 <body>
 
-  <!-- LA NUOVA BARRA -->
   <div class="nav-container">
-    <!-- Il bottone con le 3 righine, invoca lo script javascript qui sotto -->
     <button class="hamburger" onclick="toggleMenu()">☰</button>
-    
-    <!-- I tuoi link -->
     <div class="nav-links" id="myLinks">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
@@ -118,7 +103,6 @@
     </div>
   </div>
 
-  <!-- IL TITOLO GIGANTE DELLA PAGINA (Colore neutro antracite) -->
   <div style="text-align: center; margin-bottom: 50px; padding: 40px 20px;">
     <h1 style="color: #1a1a1a; font-size: 3em; margin: 0; font-weight: normal; letter-spacing: -1px;">{{ page.title }}</h1>
     {% if page.subtitle %}
@@ -126,19 +110,15 @@
     {% endif %}
   </div>
 
-  <!-- IL CONTENUTO -->
   <div class="content">
     {{ content }}
   </div>
 
-  <!-- MICRO-SCRIPT PER FAR FUNZIONARE LE 3 RIGHINE -->
   <script>
     function toggleMenu() {
       var nav = document.getElementById("myLinks");
-      // Seleziona o deseleziona la classe "active" per far apparire/scomparire la tendina
       nav.classList.toggle("active");
     }
   </script>
-
 </body>
 </html>
