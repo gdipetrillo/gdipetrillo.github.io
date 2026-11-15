@@ -26,7 +26,7 @@ title: Gemma Di Petrillo
     </p>
     
     <p>
-      <strong>I am currently on the job market!</strong>  I recently received my Ph.D. in Mathematics from the University of Trento, supervised by Bruno Martelli and Riccardo Ghiloni. If you are curious about my work, you can take a look at my <a href="files-pdf/tesi_diperillo_phd.pdf" target="_blank"><strong>Ph.D. thesis</strong></a>, where I used a combinatorial approach featuring quaternions to study deformations of hyperbolic manifolds in higher dimensions.
+      <strong>I am currently on the job market!</strong>  I recently received my Ph.D. in Mathematics from the University of Trento, supervised by Bruno Martelli and Riccardo Ghiloni. If you are curious about my work, you can take a look at my <a href="files-pdf/tesi_diperillo_phd.pdf" target="_blank"><strong>PhD thesis</strong></a>, where I used a combinatorial approach featuring quaternions to study deformations of hyperbolic manifolds in higher dimensions.
     </p>
     
     <p>Before moving to Trento, I completed my studies at the University of Pisa:</p>
