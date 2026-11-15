@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Gemma Di Petrillo
-subtitle: WIP
 ---
 
 <div class="home-grid">
