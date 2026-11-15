@@ -24,21 +24,21 @@
       z-index: 1000;
       padding: 15px 40px;
       display: flex;
-      justify-content: space-between; /* <--- LA MAGIA: nome a sx, link a dx */
+      justify-content: space-between; 
       align-items: center;
     }
 
-    /* IL TUO NOME A SINISTRA (Il "Brand") */
+    /* IL TUO NOME A SINISTRA (Ora è blu come gli altri link) */
     .nav-brand a {
-      color: #1a1a1a; /* Antracite elegante */
+      color: #2c5282; 
       text-decoration: none;
-      font-weight: 600; /* Un po' più marcato per farlo risaltare */
+      font-weight: 600; 
       font-size: 18px;
       letter-spacing: -0.5px;
       transition: color 0.2s;
     }
     .nav-brand a:hover {
-      color: #2c5282; /* Diventa blu al passaggio del mouse */
+      color: #1a365d; /* Blu scuro al passaggio del mouse, come gli altri */
     }
     
     /* I LINK A DESTRA */
@@ -76,10 +76,7 @@
 
     /* REGOLE PER IL CELLULARE */
     @media screen and (max-width: 768px) {
-      .nav-container { 
-        padding: 15px 20px; 
-        /* Con space-between il nome resta a sx e le righine vanno a dx. Perfetto! */
-      }
+      .nav-container { padding: 15px 20px; }
       .hamburger { display: block; }
       
       .nav-links {
