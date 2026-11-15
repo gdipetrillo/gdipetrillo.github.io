@@ -4,7 +4,7 @@ title: Gemma Di Petrillo
 subtitle: WIP
 ---
 
-<div style="display: grid; grid-template-columns: 350px 1fr; gap: 40px; align-items: start; text-align: left;">
+<div class="home-grid">
   
   <!-- AMBIENTE 1: La colonna di sinistra (Foto + Contatti) -->
   <div>
@@ -36,7 +36,7 @@ subtitle: WIP
       <li><strong>Bachelor's in Mathematics</strong> (2019). Advisor: Jacopo Gandini. Thesis: <em>"Teoria di Galois e Superfici di Riemann"</em>.</li>
     </ul>
     
- <p>
+    <p>
       Here is my <a href="curricula/cv_gemma_latex.pdf" target="_blank"><strong>full CV</strong></a>.
     </p>
   </div>
